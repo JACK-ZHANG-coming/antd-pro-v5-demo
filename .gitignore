@@ -1,0 +1,13 @@
+# dependencies
+node_modules
+
+# umi
+.umi
+.umi-production
+
+# screenshot
+screenshot
+.firebase
+.eslintcache
+
+build
