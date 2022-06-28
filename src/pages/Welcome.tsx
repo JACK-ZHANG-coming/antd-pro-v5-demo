@@ -40,7 +40,7 @@ const Welcome: React.FC = () => {
             <FormattedMessage id="pages.welcome.link" defaultMessage="Welcome" />
           </a>
         </Typography.Text>
-        <CodePreview>yarn add @ant-design/pro-components</CodePreview>
+        <CodePreview>yarn add @ant-design/pro-components1111</CodePreview>
       </Card>
     </PageContainer>
   );

@@ -43,6 +43,25 @@
     component: './TableList',
   },
   {
+    name: 'test1',
+    path: '/test1',
+    icon: 'smile',
+    component: './TestPageOne',
+  },
+  {
+    name: 'test2',
+    path: '/test2',
+    icon: 'smile',
+    routes:[
+      {
+        path: '/test2/test2-1',
+        name: 'test2-1',
+        icon: 'smile',
+        component: './TestPageTwo/TestPageTwoOne',
+      }
+    ]
+  },
+  {
     path: '/',
     redirect: '/welcome',
   },
