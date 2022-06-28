@@ -16,6 +16,14 @@ export default {
       // 依赖 origin 的功能可能需要这个，比如 cookie
       changeOrigin: true,
     },
+    '/mgr/': {
+      "target": "http://172.19.97.137:8080/",
+      // "target": "http://172.19.104.8:8083/",
+      // "target": "http://localhost:8083/",
+      // "target": "http://172.19.104.29:8084/",
+      // target: 'http://yapi.dev.of-crm.com/mock/48/',
+      changeOrigin: true,
+    },
   },
   test: {
     '/api/': {

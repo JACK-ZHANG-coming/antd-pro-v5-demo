@@ -16,6 +16,8 @@ import {
 import { Alert, message, Tabs } from 'antd';
 import React, { useState } from 'react';
 import { FormattedMessage, history, SelectLang, useIntl, useModel } from 'umi';
+import { fakeAccountLogin } from '@/services/user';
+import { RSALoginEncrypt } from '@/utils/codec'
 import styles from './index.less';
 import './index.less';
 
@@ -85,7 +87,14 @@ const Login: React.FC = () => {
             autoLogin: true,
           }}
           onFinish={async (values) => {
-            console.log('values:',values);
+            values = {
+              username: values?.username,
+              password: RSALoginEncrypt(values?.password),
+              type: "account",
+            }
+            console.log('values:', values);
+            let res = await fakeAccountLogin(values)
+            console.log('res:', res);
             // await handleSubmit(values as API.LoginParams);
           }}
         >
