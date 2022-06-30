@@ -18,7 +18,10 @@ const Settings: LayoutSettings & {
   logo:'/logo.svg',
   iconfontUrl: '',
   headerHeight: 68,
-  splitMenus: false
+  splitMenus: false,
+  menu:{
+    locale:false
+  }
 };
 
 export default Settings;
