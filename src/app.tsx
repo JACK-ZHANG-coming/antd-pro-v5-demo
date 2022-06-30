@@ -8,7 +8,8 @@ import { history, Link } from 'umi';
 import defaultSettings from '../config/defaultSettings';
 import { currentUser as queryCurrentUser } from '@/services/user';
 
-const isDev = process.env.NODE_ENV === 'development';
+// const isDev = process.env.NODE_ENV === 'development';
+const isDev = false;
 const loginPath = '/user/login';
 
 /** 获取用户信息比较慢的时候会展示一个 loading */
