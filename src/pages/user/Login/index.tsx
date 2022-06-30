@@ -52,10 +52,13 @@ const Login: React.FC = () => {
   };
 
   const handleSubmit = async (values: API.LoginParams) => {
+    values.password = RSALoginEncrypt(values?.password)
+    values.type = type;
     try {
       // 登录
-      const msg = await login({ ...values, type });
-      if (msg.status === 'ok') {
+      const msg = await fakeAccountLogin({ ...values, type });
+      // console.log('msg:', msg);
+      if (msg.code === '200') {
         const defaultLoginSuccessMessage = '登录成功！'
         message.success(defaultLoginSuccessMessage);
         await fetchUserInfo();
@@ -87,15 +90,7 @@ const Login: React.FC = () => {
             autoLogin: true,
           }}
           onFinish={async (values) => {
-            values = {
-              username: values?.username,
-              password: RSALoginEncrypt(values?.password),
-              type: "account",
-            }
-            console.log('values:', values);
-            let res = await fakeAccountLogin(values)
-            console.log('res:', res);
-            // await handleSubmit(values as API.LoginParams);
+            await handleSubmit(values as API.LoginParams);
           }}
         >
           <div className="sub-title"><div>账户密码登录</div></div>
